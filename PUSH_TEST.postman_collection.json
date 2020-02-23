@@ -1,0 +1,3081 @@
+{
+	"info": {
+		"_postman_id": "d80ae281-f408-4dbc-a2d8-b61227991cb2",
+		"name": "PUSH TEST （中国区测试环境）",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "消息接口测试",
+			"item": [
+				{
+					"name": "Android_正常场景",
+					"item": [
+						{
+							"name": "消息点击行为",
+							"item": [
+								{
+									"name": "自定义点击_Intent",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "7c54dbd1-0789-4749-9412-4b1fa5ffb89a",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 1,\r\n                    \"intent\": {{notification_click_intent}}\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "自定义点击_Action",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "000479b5-947f-4fc5-882c-e1fa7f098895",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 1,\r\n                    \"action\": {{notification_click_action}}\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "打开特定RUL",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "打开应用",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "4cf148ed-960b-4eb5-b486-64a0a9da8f5b",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 3\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "打开富媒体",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "61efb41a-7bcd-4928-a63e-9f040da74e74",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 4,\r\n                    \"rich_resource\": {{notification_click_rich_resource}}\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "98be6f86-c584-4506-acc4-4bfe760d2564",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "ab827c76-eea6-4d41-8446-a53a6aa033d0",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "消息类型&通知栏样式",
+							"item": [
+								{
+									"name": "透传消息_KV格式",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "52edca77-b4d0-4283-9065-7bcb12e3d511",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"data\": \"name=黄学武,age=18,phone=13728626252\",\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "透传消息_JSON格式",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "b2bc374e-eb8b-4742-b37d-99b36cbf0fca",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"data\": \"{\\\"users\\\":[{\\\"name\\\":\\\"黄学武\\\",\\\"age\\\":\\\"18\\\",\\\"phone\\\":\\\"13728626252\\\"}]}\",\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "自定义消息负载（不知道怎么使用）",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "dd39cd83-91f2-46ad-909c-8bb571105948",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"data\": \"{\\\"users\\\":[{\\\"name\\\":\\\"黄学武\\\",\\\"age\\\":\\\"18\\\",\\\"phone\\\":\\\"13728626252\\\"}]}\",\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"data\": \"name=黄学武,age=18,phone=13728626252\",\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 1,\r\n                    \"intent\": {{notification_click_intent}}\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "通知栏消息_普通文本",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"style\": 0,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "通知栏消息_大文本",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_title\": {{notification_big_title}},\r\n                \"big_body\": {{notification_big_body}},\r\n                \"style\": 1,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "通知栏消息_大图",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "通知栏消息_Inbox",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_title\": \"静夜思\",\r\n                \"style\": 3,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"inbox_content\": [\r\n                    \"床前明月光，\",\r\n                    \"疑是地上霜。\",\r\n                    \"举头望明月，\",\r\n                    \"低头思故乡。\"\r\n                ]\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "通知栏消息_大图 _按钮",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "消息缓存",
+							"item": [
+								{
+									"name": "设备离线缓存最新的一条",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n        \t\"collapse_key\": 0,\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "设备离线缓存所有消息",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n        \t\"collapse_key\": -1,\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "设备离线消息缓存分组标识_10",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n        \t\"collapse_key\": 10,\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "设备离线消息缓存分组标识_20",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n        \t\"collapse_key\": 20,\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "离线消息缓存_10秒",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n        \t\"collapse_key\": -1,\r\n        \t\"ttl\": \"10s\",\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "离线消息缓存_1天_默认",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n        \t\"collapse_key\": -1,\r\n        \t\"ttl\": \"86400s\",\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "消息优先级",
+							"item": [
+								{
+									"name": "透传消息投递优先级_NORMAL",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n        \t\"urgency\": {{priority_normal}},\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "透传消息投递优先级_HIGH_强制拉起应用",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n        \t\"urgency\": {{priority_high}},\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "透传消息投递优先级_HIGH_语音播报",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n        \t\"urgency\": {{priority_high}},\r\n        \t\"category\": \"PLAY_VOICE\",\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "通知栏消息优先级_HIGH",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n        \t    \"importance\": {{priority_high}}\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "通知栏消息优先级_NORMAL",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n        \t    \"importance\": {{priority_normal}}\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "通知栏消息优先级_LOW",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n        \t    \"importance\": {{priority_low}}\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "BI&回执",
+							"item": [],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "快应用",
+							"item": [],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "展示样式",
+							"item": [
+								{
+									"name": "普通_大图_按钮颜色灰",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"color\": \"#505050\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮颜色默认",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"color\": \"\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_自定义声音",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"default_sound\": false,\r\n                \"sound\": \"/raw/shake\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_使用默认声音",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"default_sound\": true,\r\n                \"sound\": \"/raw/shake\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_随机显示ICON",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "9b824923-d371-4f90-a8c5-fdbff9ab9ec2",
+												"exec": [
+													"var iconVal = [\"ic_launcherjpg\", \"small_pic\", \"big_pic\"];",
+													"",
+													"pm.environment.set(\"ramdom_icon\", iconVal[parseInt(Math.random() * 3, 10)]);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"icon\": \"/raw/{{ramdom_icon}}\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_默认呼吸灯模式",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"use_default_light\": true,\r\n                \"light_settings\": {\r\n                \t\"color\": {\r\n                \t\t\"alpha\": 0.9,\r\n                \t\t\"red\": 0,\r\n                \t\t\"green\": 0.5,\r\n                \t\t\"blue\": 0.5\r\n                \t},\r\n                \t\"light_on_duration\": \"5s\",\r\n                \t\"light_off_duration\": \"1s\"\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_自定义呼吸灯模式",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"use_default_light\": false,\r\n                \"light_settings\": {\r\n                \t\"color\": {\r\n                \t\t\"alpha\": 0.9,\r\n                \t\t\"red\": 0,\r\n                \t\t\"green\": 0.5,\r\n                \t\t\"blue\": 0.5\r\n                \t},\r\n                \t\"light_on_duration\": \"5s\",\r\n                \t\"light_off_duration\": \"1s\"\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_默认振动模式",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"use_default_vibrate\": true,\r\n                \"vibrate_config\": [\r\n            \t\t\"3s\",\r\n            \t\t\"2s\",\r\n            \t\t\"1s\",\r\n            \t\t\"0.5s\"\r\n            \t]\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_自定义振动模式",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"use_default_vibrate\": false,\r\n                \"vibrate_config\": [\r\n            \t\t\"3s\",\r\n            \t\t\"2s\",\r\n            \t\t\"1s\",\r\n            \t\t\"0.5s\"\r\n            \t]\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_自定义渠道（先添加渠道）",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"channel_id\": \"HMSTestDemo\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_锁屏显示消息内容（可见性）",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"visibility\": \"PUBLIC\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_锁屏不显示消息通知（可见性）",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"visibility\": \"SECRET\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_锁屏根据锁屏通知设置显示（可见性）",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"visibility\": \"PRIVATE\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_不指定锁屏显示设置同PRIVATE（可见性）",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"visibility\": \"VISIBILITY_UNSPECIFIED\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_应用在前台不显示（消息透传）",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 1,\r\n                    \"intent\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"foreground_show\": false\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_消息排序2020-02-02",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享2\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"when\": \"2020-02-02T15:01:23.045123456Z\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_消息排序2020-02-03",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享2\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"when\": \"2020-02-03T15:01:23.045123456Z\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_点击消息清除",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"auto_cancel\": true\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_点击消息不清除（需开通权益）",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"auto_cancel\": false\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_ticker",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"ticker\": \"hahaha\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_固定分组（同组显示1条）",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "de50d418-aa78-43cd-ae8f-20f23ab4e7f1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"group\": \"group1\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_随机分组",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "de50d418-aa78-43cd-ae8f-20f23ab4e7f1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"group\": \"group_{{$guid}}\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_消息不覆盖",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "de50d418-aa78-43cd-ae8f-20f23ab4e7f1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"notify_id\": -1\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_新消息覆盖老消息",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "de50d418-aa78-43cd-ae8f-20f23ab4e7f1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": \"{{$guid}}\",\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"notify_id\": 1000\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_新消息覆盖老消息_tag（旧的？）",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "de50d418-aa78-43cd-ae8f-20f23ab4e7f1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": \"{{$guid}}\",\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"tag\": \"tag1000\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_超时自动清除消息",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "de50d418-aa78-43cd-ae8f-20f23ab4e7f1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"auto_clear\": 5000\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_角标+1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"badge\": {\r\n                \t\"add_num\": 1,\r\n                \t\"class\": \"com.huawei.demo.push.HuaweiPushApiExample\"\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_角标+2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"badge\": {\r\n                \t\"add_num\": 2,\r\n                \t\"class\": \"com.huawei.demo.push.HuaweiPushApiExample\"\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_角标值设置",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"badge\": {\r\n                \t\"set_num\": 99,\r\n                \t\"class\": \"com.huawei.demo.push.HuaweiPushApiExample\"\r\n                }\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_消息简要描述",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"notify_summary\": \"这里是摘要\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_缓存消息过期时间10s",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"ttl\": \"10s\",\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_缓存消息过期时间1天",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"ttl\": \"86400s\",\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_批量任务标识（回执中带，用于统计）",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ],\r\n                \"color\": \"#505050\"\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_消息语言本地化_服务端配置",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"title_loc_key\": \"demo_title_new1\",\r\n                \"title_loc_args\": [\r\n                    \"Girl\",\r\n                    \"Cat\"\r\n                ],\r\n                \"body_loc_key\": \"demo_title_new2\",\r\n                \"body_loc_args\": [\r\n                    \"Boy\",\r\n                    \"Dog\"\r\n                ],\r\n                \"click_action\": {\r\n                    \"type\": 1,\r\n                    \"intent\": {{notification_click_intent}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大文本_按钮_消息语言本地化_服务端配置",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_title\": {{notification_big_title}},\r\n                \"big_body\": {{notification_big_body}},\r\n                \"style\": 1,\r\n                \"title_loc_key\": \"demo_title_new1\",\r\n                \"title_loc_args\": [\r\n                    \"Girl\",\r\n                    \"Cat\"\r\n                ],\r\n                \"body_loc_key\": \"demo_title_new2\",\r\n                \"body_loc_args\": [\r\n                    \"Boy\",\r\n                    \"Dog\"\r\n                ],\r\n                \"click_action\": {\r\n                    \"type\": 1,\r\n                    \"intent\": {{notification_click_intent}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_消息语言本地化_服务端配置_打开浏览器_无替换",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"title_loc_key\": \"demo_title_new1\",\r\n                \"title_loc_args\": [\r\n                    \"Girl\",\r\n                    \"Cat\"\r\n                ],\r\n                \"body_loc_key\": \"demo_title_new2\",\r\n                \"body_loc_args\": [\r\n                    \"Boy\",\r\n                    \"Dog\"\r\n                ],\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大图_按钮_消息语言本地化_API配置",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 0,\r\n                \"title_loc_key\": \"title_key\",\r\n                \"title_loc_args\": [\r\n                    \"WeChat\"\r\n                ],\r\n\t\t\t    \"body_loc_key\": \"body_key\",\r\n\t\t\t    \"body_loc_args\": [\r\n\t\t\t        \"Jack\",\r\n\t\t\t        \"Shanghai\"\r\n\t\t\t    ],\r\n\t\t\t    \"multi_lang_key\": {\r\n\t\t\t        \"title_key\": {\r\n\t\t\t            \"en\": \"New Friend Request(%s)\",\r\n\t\t\t            \"zh\": \"添加好友请求(%s)\",\r\n\t\t\t            \"ru\": \"Запрос нового друга(%s)\"\r\n\t\t\t        },\r\n\t\t\t        \"body_key\": {\r\n\t\t\t            \"en\": \"My name is %s, I am from %s.\",\r\n\t\t\t            \"zh\": \"我叫%s，来自%s。\",\r\n\t\t\t            \"ru\": \"Меня зовут %s, я из %s.\"\r\n\t\t\t        }\r\n\t\t\t    },\r\n                \"click_action\": {\r\n                    \"type\": 1,\r\n                    \"intent\": {{notification_click_intent}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "普通_大文本_按钮_消息语言本地化_API配置",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_title\": {{notification_big_title}},\r\n                \"big_body\": {{notification_big_body}},\r\n                \"style\": 1,\r\n                \"title_loc_key\": \"title_key\",\r\n                \"title_loc_args\": [\r\n                    \"WeChat\"\r\n                ],\r\n\t\t\t    \"body_loc_key\": \"body_key\",\r\n\t\t\t    \"body_loc_args\": [\r\n\t\t\t        \"Jack\",\r\n\t\t\t        \"Shanghai\"\r\n\t\t\t    ],\r\n\t\t\t    \"multi_lang_key\": {\r\n\t\t\t        \"title_key\": {\r\n\t\t\t            \"en\": \"New Friend Request(%s)\",\r\n\t\t\t            \"zh\": \"添加好友请求(%s)\",\r\n\t\t\t            \"ru\": \"Запрос нового друга(%s)\"\r\n\t\t\t        },\r\n\t\t\t        \"body_key\": {\r\n\t\t\t            \"en\": \"My name is %s, I am from %s.\",\r\n\t\t\t            \"zh\": \"我叫%s，来自%s。\",\r\n\t\t\t            \"ru\": \"Меня зовут %s, я из %s.\"\r\n\t\t\t        }\r\n\t\t\t    },\r\n                \"click_action\": {\r\n                    \"type\": 1,\r\n                    \"intent\": {{notification_click_intent}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "发送方式",
+							"item": [
+								{
+									"name": "普通_大图_按钮",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "主题_Inbox_按钮",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_title\": \"静夜思\",\r\n                \"style\": 3,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"inbox_content\": [\r\n                    \"床前明月光，\",\r\n                    \"疑是地上霜。\",\r\n                    \"举头望明月，\",\r\n                    \"低头思故乡。\"\r\n                ],\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n\t\t\"topic\": \"myTopic\"\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "条件_大文本_按钮",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_title\": {{notification_big_title}},\r\n                \"big_body\": {{notification_big_body}},\r\n                \"style\": 1,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n\t\t\"condition\": \"'myTopic' in topics || ( 'TopicB' in topics && 'TopicC' in topics )\"\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "36c285a0-e7ff-4841-92cf-62592dbe1a11",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "51e8f712-e20e-4d5a-9e06-3623345f90fb",
+								"type": "text/javascript",
+								"exec": [
+									"let jsonData = JSON.parse(responseBody);",
+									"tests[\"PASS, return code is 80000000\"] = jsonData.code === \"80000000\";",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function(){",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Android_异常场景",
+					"item": [
+						{
+							"name": "敏感词&智能优选",
+							"item": [
+								{
+									"name": "敏感词_按钮名称_hao1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享hao1\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhaihaohao_1/article/details/90674838\"\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "敏感词_按钮内容_hao1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhaihaohao1/article/details/90674838\"\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "敏感词_标题_hao1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": \"hao1\",\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhaihaohao_1/article/details/90674838\"\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "敏感词_内容_hao1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": \"hao1\",\r\n                \"image\": {{notification_image2}},\r\n                \"big_picture\": {{notification_big_pic}},\r\n                \"style\": 2,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhaihaohao_1/article/details/90674838\"\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n\t\t\"token\": [\r\n\t\t\t{{AppToken}}\r\n\t\t\t]\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "敏感词_Inbox内容_hao1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "016a13c5-1c78-44a8-bec4-d59df2bedcd1",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"validate_only\": false,\r\n\t\"message\": {\r\n        \"notification\": {\r\n            \"title\": {{notification_title}},\r\n            \"body\": {{notification_body}},\r\n            \"image\": {{notification_image}}\r\n        },\r\n        \"android\": {\r\n            \"notification\": {\r\n                \"title\": {{android_title}},\r\n                \"body\": {{android_body}},\r\n                \"image\": {{notification_image2}},\r\n                \"big_title\": \"静夜思\",\r\n                \"style\": 3,\r\n                \"click_action\": {\r\n                    \"type\": 2,\r\n                    \"url\": {{notification_click_url}}\r\n                },\r\n                \"inbox_content\": [\r\n                    \"床前明月光，\",\r\n                    \"疑是地上霜。\",\r\n                    \"举头望明月，\",\r\n                    \"低头思故乡hao1。\"\r\n                ],\r\n                \"buttons\": [\r\n                    {\r\n                        \"name\": \"拉起应用\",\r\n                        \"action_type\": 1,\r\n                        \"intent_type\": 0,\r\n                        \"intent\": {{notification_click_intent}},\r\n                        \"data\": \"uri--1234567890\"\r\n                    },\r\n                    {\r\n                        \"name\": \"拉起浏览器\",\r\n                        \"action_type\": 2,\r\n                        \"intent\": {{notification_click_url}}\r\n                    },\r\n                    {\r\n                        \"name\": \"分享\",\r\n                        \"action_type\": 4,\r\n                        \"data\": \"快去了解：\\nMate 30 5G首发有礼\\nhttps://blog.csdn.net/zhai_hao_hao_1/article/details/90674838\"\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n\t\t\"topic\": \"myTopic\"\r\n\t}\r\n}"
+										},
+										"url": {
+											"raw": "{{myDomain}}/v1/{{client_id}}/messages:send",
+											"host": [
+												"{{myDomain}}"
+											],
+											"path": [
+												"v1",
+												"{{client_id}}",
+												"messages:send"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "1a1ea829-0215-474f-820f-87a41bafabcc",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "ab4bdbd5-c970-4776-a884-57401374fce2",
+										"type": "text/javascript",
+										"exec": [
+											"let jsonData = JSON.parse(responseBody);",
+											"tests[\"PASS, return code is 80100016\"] = jsonData.code === \"80100016\";",
+											"",
+											"pm.test(\"Response time is less than 200ms\", function(){",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										]
+									}
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "字段校验",
+							"item": [],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "值校验",
+							"item": [],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "0e072187-0ed8-4e0b-8277-84f1e47faaba",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "3a81f7b1-20f0-4048-ac73-01f0299715af",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "accessToken",
+				"value": "CV5ZGDQzRgpZwPT46V5DapUanoT7rAO0gSceTmWnSWY7r4OthVhOY7N3AEUuIxbNbq1TBv8olnMazuEnQIMAcK1bkip/",
+				"type": "string"
+			},
+			{
+				"key": "tokenType",
+				"type": "any"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e4c77354-e555-4c8c-bb7b-502956fec781",
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"Hello, \" + pm.info.requestName);"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "59a9a35a-4b1f-4a7a-8c84-7ebf4292d637",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
