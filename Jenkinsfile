@@ -1,5 +1,20 @@
 ﻿pipeline {
   agent any
+  options {
+      timeout(time: 10, unit: 'MINUTES') 
+      retry(3)
+  }
+  parameters {
+      string(name: 'BUILE_PERSION', 
+        defaultValue: 'Mr Huangxuewu', 
+        description: 'Who should I say hello to?')      
+      choice(name:'osType',
+        choices:["Android","iOS"],
+        description:'测试手机操作系统类型')
+  }
+  environment { 
+      CC = 'clang'
+  }
   stages {
     stage(' UpdateProject') {
       parallel {
@@ -54,10 +69,5 @@
       }
     }
 
-  }
-  post { 
-    always { 
-        echo 'I will always say Hello again!'
-    }
   }
 }
