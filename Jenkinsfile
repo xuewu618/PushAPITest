@@ -49,4 +49,7 @@ pipeline {
     }
 
   }
+  environment {
+    testType = 'type01'
+  }
 }
