@@ -1,4 +1,4 @@
-pipeline {
+锘縫ipeline {
   agent any
   options {
       timeout(time: 10, unit: 'MINUTES') 
@@ -10,7 +10,7 @@ pipeline {
         description: 'Who should I say hello to?')      
       choice(name:'osType',
         choices:["Android","iOS"],
-        description:'测试手机操作系统类型')
+        description:'娴嬭瘯鎵嬫満鎿嶄綔绯荤粺绫诲瀷')
   }
   environment { 
       CC = 'clang'
@@ -74,5 +74,5 @@ pipeline {
     always { 
         echo 'I will always say Hello again!'
     }
-	}
+  }
 }
