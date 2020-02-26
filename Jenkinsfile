@@ -1,5 +1,20 @@
 pipeline {
   agent any
+  options {
+      timeout(time: 10, unit: 'MINUTES') 
+      retry(3)
+  }
+  parameters {
+      string(name: 'BUILE_PERSION', 
+        defaultValue: 'Mr Huangxuewu', 
+        description: 'Who should I say hello to?')      
+      choice(name:'osType',
+        choices:["Android","iOS"],
+        description:'测试手机操作系统类型')
+  }
+  environment { 
+      CC = 'clang'
+  }
   stages {
     stage(' UpdateProject') {
       parallel {
@@ -11,7 +26,13 @@ pipeline {
 
         stage('CheckUpdate') {
           steps {
-            echo 'Update project finished'
+            echo 'Hi, ${params.BUILE_PERSION}, Update project finished.'
+            script {
+                def browsers = ['chrome', 'firefox']
+                for (int i = 0; i < browsers.size(); ++i) {
+                    echo "Testing the ${browsers[i]} browser"
+                }
+            }
           }
         }
 
@@ -48,5 +69,10 @@ pipeline {
       }
     }
 
+  }
+  post { 
+      always { 
+          echo 'I will always say Hello again!'
+      }
   }
 }
