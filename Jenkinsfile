@@ -34,6 +34,7 @@ pipeline {
                 }
                 echo "Testing the ${PERSION} browser"
             }
+            bat 'set'
           }
         }
 
