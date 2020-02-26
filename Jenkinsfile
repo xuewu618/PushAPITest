@@ -5,9 +5,8 @@ pipeline {
       retry(3)
   }
   parameters {
-      string(name: 'PERSION', 
-        defaultValue: 'Mr Huangxuewu', 
-        description: 'Who should I say hello to?')      
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+
       choice(name:'osType',
         choices:["Android","iOS"],
         description:'测试手机操作系统类型')
@@ -20,6 +19,7 @@ pipeline {
       parallel {
         stage('PullCode') {
           steps {
+            echo "Hello ${params.PERSON}"
             git(branch: 'master', url: 'https://github.com/xuewu618/PushAPITest')
           }
         }
