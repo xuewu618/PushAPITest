@@ -74,5 +74,7 @@ pipeline {
       always { 
           echo 'I will always say Hello again!'
       }
+  environment {
+    testType = 'type01'
   }
 }
