@@ -5,7 +5,7 @@ pipeline {
       retry(3)
   }
   parameters {
-      string(name: 'BUILE_PERSION', 
+      string(name: 'PERSION', 
         defaultValue: 'Mr Huangxuewu', 
         description: 'Who should I say hello to?')      
       choice(name:'osType',
@@ -26,13 +26,13 @@ pipeline {
 
         stage('CheckUpdate') {
           steps {
-            echo 'Hi, %BUILE_PERSION%, Update project finished.'
+            echo 'Hi, %params.PERSION%, Update project finished.'
             script {
                 def browsers = ['chrome', 'firefox']
                 for (int i = 0; i < browsers.size(); ++i) {
                     echo "Testing the ${browsers[i]} browser"
                 }
-                echo "Testing the ${BUILE_PERSION} browser"
+                echo "Testing the ${PERSION} browser"
             }
           }
         }
