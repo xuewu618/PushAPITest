@@ -34,6 +34,7 @@ pipeline {
                 }
                 echo "Testing the ${PERSION} browser"
             }
+            echo "Hello ${params.PERSON}"
             bat 'set'
           }
         }
