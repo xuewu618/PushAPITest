@@ -23,7 +23,7 @@ pipeline {
         stage('RunTest') {
           steps {
             echo 'Run test here'
-            bat 'newman run UserTest.postman_collection.json -r cli,htmlextra --reporter-html-export htmlReport.html'
+            bat 'newman run UserTest.postman_collection.json -r cli,htmlextra --reporter-html-export .\\newman\\htmlReport-${BUILD_TIMESTAMP}.html'
           }
         }
 
