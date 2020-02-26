@@ -26,7 +26,7 @@ pipeline {
 
         stage('CheckUpdate') {
           steps {
-            echo 'Hi, ${params.BUILE_PERSION}, Update project finished.'
+            echo 'Hi, %params.BUILE_PERSION%, Update project finished.'
             script {
                 def browsers = ['chrome', 'firefox']
                 for (int i = 0; i < browsers.size(); ++i) {
