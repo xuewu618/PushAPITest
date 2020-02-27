@@ -19,22 +19,22 @@ pipeline {
       parallel {
         stage('PullCode') {
           steps {
-            echo 'Hello ${params.PERSON}'
+            echo "Hello ${params.PERSON}"
             git(branch: 'master', url: 'https://github.com/xuewu618/PushAPITest')
           }
         }
 
         stage('CheckUpdate') {
           steps {
-            bat 'echo "Hi, %PERSION%, Update project finished."'
+            bat 'echo Hi, %PERSION%, Update project finished.'
             script {
                 def browsers = ['chrome', 'firefox']
                 for (int i = 0; i < browsers.size(); ++i) {
                     echo "Testing the ${browsers[i]} browser"
                 }
-                echo 'Testing the ${PERSION} browser'
+                echo "Testing the ${params.PERSION} browser"
             }
-            echo 'Hello ${params.PERSON}'
+            echo "Hello ${params.PERSON}"
             bat 'set'
           }
         }
