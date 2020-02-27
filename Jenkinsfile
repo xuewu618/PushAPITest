@@ -80,7 +80,7 @@ pipeline {
             alwaysLinkToLastBuild: false,
             keepAll: true,
             reportDir: 'NewmanReports',
-            reportFiles: "index-newmanreport-%BUILD_ID%-%BUILD_TIMESTAMP_SIMPLE%.html",
+            reportFiles: 'index-newmanreport-${BUILD_ID}-${BUILD_TIMESTAMP_SIMPLE}.html',
             reportName: "NewmanHTMLReport"
           ])
         }
