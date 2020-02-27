@@ -47,7 +47,7 @@ pipeline {
         stage('RunTest') {
           steps {
             echo 'Run test here'
-            bat 'newman run UserTest.postman_collection.json -r cli,htmlextra --reporter-htmlextra-export .\\NewmanReports\\index-newmanreport-20200227160000.html'
+            bat 'newman run UserTest.postman_collection.json -r cli,htmlextra --reporter-htmlextra-export .\\NewmanReports\\index-newmanreport-101-20200227160000.html'
           }
         }
 
@@ -80,7 +80,7 @@ pipeline {
             alwaysLinkToLastBuild: false,
             keepAll: true,
             reportDir: 'NewmanReports',
-            reportFiles: 'index-newmanreport-20200227160000.html',
+            reportFiles: 'index-newmanreport-101-20200227160000.html',
             reportName: "NewmanHTMLReport"
           ])
         }
