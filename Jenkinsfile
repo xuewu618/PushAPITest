@@ -19,7 +19,7 @@ pipeline {
       parallel {
         stage('PullCode') {
           steps {
-            echo "Hello ${params.PERSON}"
+            echo 'Hello ${params.PERSON}'
             git(branch: 'master', url: 'https://github.com/xuewu618/PushAPITest')
           }
         }
@@ -32,9 +32,9 @@ pipeline {
                 for (int i = 0; i < browsers.size(); ++i) {
                     echo "Testing the ${browsers[i]} browser"
                 }
-                echo "Testing the ${PERSION} browser"
+                echo 'Testing the ${PERSION} browser''
             }
-            echo "Hello ${params.PERSON}"
+            echo 'Hello ${params.PERSON}'
             bat 'set'
           }
         }
