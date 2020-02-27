@@ -32,7 +32,7 @@ pipeline {
                 for (int i = 0; i < browsers.size(); ++i) {
                     echo "Testing the ${browsers[i]} browser"
                 }
-                echo 'Testing the ${PERSION} browser''
+                echo 'Testing the ${PERSION} browser'
             }
             echo 'Hello ${params.PERSON}'
             bat 'set'
