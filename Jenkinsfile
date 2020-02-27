@@ -26,13 +26,13 @@ pipeline {
 
         stage('CheckUpdate') {
           steps {
-            bat 'echo "Hi, %PERSION%, Update project finished."'
+            bat 'echo Hi, %PERSON%, Update project finished.'
             script {
                 def browsers = ['chrome', 'firefox']
                 for (int i = 0; i < browsers.size(); ++i) {
                     echo "Testing the ${browsers[i]} browser"
                 }
-                echo "Testing the ${params.PERSION} browser"
+                echo "Testing the ${params.PERSON} browser"
             }
             echo "Hello ${params.PERSON}"
             bat 'set'
