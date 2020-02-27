@@ -47,7 +47,7 @@ pipeline {
         stage('RunTest') {
           steps {
             echo 'Run test here'
-            bat 'newman run UserTest.postman_collection.json -r cli,htmlextra --reporter-htmlextra-export .\\newman\\htmlReport-%BUILD_ID%-%BUILD_TIMESTAMP_SIMPLE%.html'
+            bat 'newman run UserTest.postman_collection.json -r cli,htmlextra --reporter-htmlextra-export .\\NewmanReports\\htmlReport-%BUILD_ID%-%BUILD_TIMESTAMP_SIMPLE%.html'
           }
         }
 
@@ -75,7 +75,18 @@ pipeline {
   }
   post { 
     always { 
-        echo 'I will always say Hello again!'
+      script{
+        node(win_node){
+          publishHTML (target: [
+            allowMissing: false,
+            alwaysLinkToLastBuild: false,
+            keepAll: true,
+            reportDir: 'NewmanReports',
+            reportFiles: 'htmlReport-%BUILD_ID%-%BUILD_TIMESTAMP_SIMPLE%.html',
+            reportName: "Newman HTML Report"
+          ])
+        }
+      }
     }
   }
 }
