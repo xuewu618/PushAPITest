@@ -28,11 +28,11 @@ pipeline {
           steps {
             bat 'echo Hi, %PERSON%, Update project finished.'
             script {
-                def browsers = ['chrome', 'firefox']
-                for (int i = 0; i < browsers.size(); ++i) {
-                    echo "Testing the ${browsers[i]} browser"
-                }
-                echo "Testing the ${params.PERSON} browser"
+              def browsers = ['chrome', 'firefox']
+              for (int i = 0; i < browsers.size(); ++i) {
+                echo "Testing the ${browsers[i]} browser"
+              }
+              echo "Testing the ${params.PERSON} browser"
             }
             echo "Hello ${params.PERSON}"
             bat 'set'
