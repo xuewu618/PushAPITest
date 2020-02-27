@@ -76,16 +76,14 @@ pipeline {
   post { 
     always { 
       script{
-        node(win_node){
-          publishHTML (target: [
-            allowMissing: false,
-            alwaysLinkToLastBuild: false,
-            keepAll: true,
-            reportDir: 'NewmanReports',
-            reportFiles: 'htmlReport-%BUILD_ID%-%BUILD_TIMESTAMP_SIMPLE%.html',
-            reportName: "Newman HTML Report"
-          ])
-        }
+        publishHTML (target: [
+          allowMissing: false,
+          alwaysLinkToLastBuild: false,
+          keepAll: true,
+          reportDir: 'NewmanReports',
+          reportFiles: 'htmlReport-%BUILD_ID%-%BUILD_TIMESTAMP_SIMPLE%.html',
+          reportName: "Newman HTML Report"
+        ])
       }
     }
   }
