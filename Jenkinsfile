@@ -47,7 +47,7 @@ pipeline {
         stage('RunTest') {
           steps {
             echo 'Run test here'
-            bat 'newman run UserTest.postman_collection.json -r cli,htmlextra --reporter-htmlextra-export .\\NewmanReports\\index.html'
+            bat 'newman run UserTest.postman_collection.json -r cli,htmlextra --reporter-htmlextra-export .\\NewmanReports\\index-newman.html'
           }
         }
 
@@ -72,19 +72,25 @@ pipeline {
       }
     }
 
+    stage('Publish Report') {
+      steps {
+        script{
+          publishHTML (target: [
+            allowMissing: false,
+            alwaysLinkToLastBuild: false,
+            keepAll: true,
+            reportDir: 'NewmanReports',
+            reportFiles: 'index-newman.html',
+            reportName: "NewmanHTMLReport"
+          ])
+        }
+      }
+    }
+
   }
   post { 
-    always { 
-      script{
-        publishHTML (target: [
-          allowMissing: false,
-          alwaysLinkToLastBuild: false,
-          keepAll: true,
-          reportDir: 'NewmanReports',
-          reportFiles: 'index.html',
-          reportName: "NewmanHTMLReport"
-        ])
-      }
+    always {
+      echo 'post process here'
     }
   }
 }
