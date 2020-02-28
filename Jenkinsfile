@@ -5,7 +5,7 @@ pipeline {
       retry(3)
   }
   parameters {
-        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+      string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 
       choice(name:'osType',
         choices:["Android","iOS"],
@@ -73,24 +73,47 @@ pipeline {
     }
 
     stage('Publish Report') {
-      steps {
-        script{
-          publishHTML (target: [
-            allowMissing: false,
-            alwaysLinkToLastBuild: false,
-            keepAll: true,
-            reportDir: 'NewmanReports',
-            reportFiles: 'index-newmanreport-${BUILD_ID}-${BUILD_TIMESTAMP_SIMPLE}.html',
-            reportName: "NewmanHTMLReport"
-          ])
-        }
+	    steps {
+	      echo 'Publish Report'
       }
     }
 
   }
+  
   post { 
     always {
-      echo 'post process here'
+      script{
+        publishHTML (target: [
+          allowMissing: false,
+          alwaysLinkToLastBuild: false,
+          keepAll: true,
+          reportDir: 'NewmanReports',
+          reportFiles: 'push-newmanreport-${BUILD_ID}-${BUILD_TIMESTAMP_SIMPLE}.html, user-newmanreport-${BUILD_ID}-${BUILD_TIMESTAMP_SIMPLE}.html',
+          reportName: "NewmanHTMLReport"
+        ])
+      }
+    }
+  
+  	success {
+      emailext (
+        subject: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+        body: """<p>SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+            <p>Check console output at "<a href="${env.BUILD_URL}">${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>"</p>""",
+        to: "huangxuewu@huawei.com",
+        from: "huangxuewu@huawei.com"
+      )
+    }
+    failure {
+      emailext (
+        subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+        body: """
+            <p>FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+            <p>Check console output at "<a href="${env.BUILD_URL}/console/">${env.JOB_NAME} [${env.BUILD_NUMBER}] log</a>"</p>
+            <p>Check test report at "<a href="${env.BUILD_URL}/NewmanHTMLReport/">${env.JOB_NAME} [${env.BUILD_NUMBER}] report</a>"</p>
+            """,
+        to: "huangxuewu@huawei.com",
+        from: "huangxuewu@huawei.com"
+      )
     }
   }
 }
